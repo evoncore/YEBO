@@ -1,6 +1,454 @@
 
 // Variables
 
-$af: sans-serif, Arial
+// Fonts
+$mf: 'Lato' // Main Font
+$af: sans-serif, Arial // Alternative Fonts
+
+// Colors
+$mc: #64c29e // Main Color
+$bc: #f7f7f7 // Background Color
+
+$mt: .2s // Main Transition
+
+// End Variables
+
+// Reset
+
+*
+  outline: none
+
+ul
+  margin-bottom: 0
+  padding-left: 0
+  list-style: none
+  cursor: default
+
+a
+  &:hover, &:active
+    text-decoration: none
+    color: $mc
+  &:focus
+    color: #4d4959
+    text-decoration: none
+
 
 // Main Settings
+
+html, body
+  height: 100%
+
+body
+  color: $bc
+  -webkit-font-smoothing: subpixel-antialiased
+  overflow-x: hidden
+
+::selection
+  background-color: $mc
+  color: #fff
+
+::-webkit-selection
+  background-color: $mc
+  color: #fff
+
+::-moz-selection
+  background-color: $mc
+  color: #fff
+
+::-webkit-scrollbar
+  width: 10px
+  height: 10px
+
+::-webkit-scrollbar-track
+  background: #4d4959
+
+::-webkit-scrollbar-thumb
+  background: $mc
+
+::-webkit-input-placeholder
+  color: #929292
+  font: 400 20px/24px $mf, $af
+  font-style: italic
+  transition: $mt
+:-moz-placeholder
+  color: #929292
+  font: 400 20px/24px $mf, $af
+  font-style: italic
+  transition: $mt
+:-ms-input-placeholder  
+  color: #929292
+  font: 400 20px/24px $mf, $af
+  font-style: italic
+  transition: $mt
+
+section
+  text-align: center
+
+.container-fluid
+  max-width: 1600px
+
+.icon
+  text-align: center
+  display: inline-block
+  width: 60px
+  height: 50px
+  background: url('../img/bike-icons.png') no-repeat
+  &:nth-child(1)
+    background-position: -60px 0
+
+.title
+  color: #353738
+  font: 700 18px/34px $mf, $af
+  text-transform: uppercase
+  letter-spacing: 4px
+
+p
+  color: #848789
+  font: 400 18px/34px $mf, $af
+
+
+// Header
+
+header
+  position: absolute
+  top: 0
+  width: 100%
+  padding-top: 35px
+  transition: $mt + .1
+  .row
+    transition: $mt + .1
+  #logo
+    text-align: center
+    img
+      transition: $mt + .1
+  li
+    display: inline-block
+    font: 700 13px $mf, $af
+    text-transform: uppercase
+    a
+      display: inline-block
+      color: #4d4959
+      margin: 30px 32px
+      transition: $mt
+  #left-side-menu
+    li:last-child
+      a
+        margin-right: 0
+  #right-side-menu
+    li:first-child
+      a
+        margin-left: 0
+
+// Home
+
+#home
+  background: url('../img/home-bg.jpg') no-repeat center, #ddd
+  background-size: cover
+  padding-top: 130px
+
+
+// About Us
+
+#about-us
+  padding:
+    top: 115px
+    bottom: 120px
+    left: 16%
+    right: 16%
+
+
+// Work
+
+#work
+  .row
+    height: 600px
+    .col
+      height: 100%
+      padding: 0
+      position: relative
+      img
+        width: 100%
+        bottom: 0
+        left: 0
+        position: absolute
+  .row:nth-child(1)
+    .icon
+      background-position: -120px 0
+    .col:nth-child(1)
+      background: url('../img/work-1.jpg') no-repeat center, #ccc
+      .work-icon
+        background-position: 0 0
+  .row:nth-child(2)
+    .icon
+      background-position: -180px 0
+    .col:nth-child(2)
+      background: url('../img/work-2.jpg') no-repeat center, #ccc
+      .work-icon
+        background-position: -208px 0
+  .row:nth-child(3)
+    .icon
+      background-position: -240px 0
+    .col:nth-child(1)
+      background: url('../img/work-3.jpg') no-repeat center, #ccc
+      .work-icon
+        background-position: -416px 0
+    .col:nth-child(3)
+      background: url('../img/work-4.jpg') no-repeat center, #ccc
+  .work-text
+    max-height: 400px
+    overflow-y: auto
+    height: 400px
+    padding: 0 12%
+    padding-top: 60px
+    color: #fff
+    p
+      font: 400 16px/30px $mf, $af
+  .work-icon
+    width: 208px
+    height: 152px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: url('../img/work-icons.png') no-repeat
+
+
+// Twitter
+
+#twitter
+  position: relative
+  padding:
+    top: 120px
+    bottom: 120px
+    left: 16%
+    right: 16%
+  .fa-twitter
+    display: inline-block
+    color: #56c7ee
+    font-size: 34px
+    margin-bottom: 25px
+  .tweet-name
+    font: 700 18px $mf, $af
+    color: #353738
+    margin-bottom: 15px
+    i
+      font-weight: 400
+      color: #848789
+      font-style: normal
+  .tweet
+    font: 400 24px/34px $mf, $af
+    font-style: italic
+    margin-bottom: 40px
+  .twitter-controls
+    position: absolute
+    bottom: 50px
+    left: 50%
+    transform: translate(-50%)
+    cursor: default
+    a
+      display: inline-block
+      width: 11px
+      height: 11px
+      border-radius: 50%
+      margin: 0 2px
+      border: 1px solid #a9afb3
+    .active
+      background-color: #a9afb3
+    
+
+// Shop
+
+#shop
+  .row:first-child
+    height: 535px
+  .col
+    padding: 0
+    height: 100%
+    .item
+      position: relative
+      &:hover .photo-filter
+        opacity: 1
+    &:nth-child(1)
+      .item
+        float: left
+        &:nth-child(1)
+          width: 50%
+          height: 50%
+          background: url('../img/shop-img-1.jpg') no-repeat
+          background-size: cover
+        &:nth-child(2)
+          width: 50%
+          height: 50%
+          background: url('../img/shop-img-2.jpg') no-repeat
+          background-size: cover
+        &:nth-child(3)
+          width: 100%
+          height: 50%
+          background: url('../img/shop-img-3.jpg') no-repeat
+          background-size: cover
+    &:nth-child(2)
+      .item
+        &:nth-child(1)
+          width: 100%
+          height: 100%
+          background: url('../img/shop-img-4.jpg') no-repeat
+          background-size: cover
+    &:nth-child(3)
+      .item
+        &:nth-child(1)
+          width: 100%
+          height: 100%
+          background: url('../img/shop-img-5.jpg') no-repeat
+          background-size: cover
+    &:nth-child(4)
+      .item
+        float: left
+        &:nth-child(1)
+          width: 100%
+          height: 50%
+          background: url('../img/shop-img-6.jpg') no-repeat
+          background-size: cover
+        &:nth-child(2)
+          width: 50%
+          height: 50%
+          background: url('../img/shop-img-7.jpg') no-repeat center
+          background-size: cover
+        &:nth-child(3)
+          width: 50%
+          height: 50%
+          background: url('../img/shop-img-8.jpg') no-repeat
+          background-size: cover
+  .photo-filter
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    background: rgba(100,194,158,.8)
+    transition: $mt
+    opacity: 0
+    .content
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+    .icon
+      background-position: 0 0
+    p
+      text-transform: uppercase
+      color: #fff
+      font: 700 14px $mf, $af
+      margin-top: -5px
+      letter-spacing: 3px
+  .shop-btn
+    background-color: #282f35
+    padding: 75px 0
+    a
+      display: inline-block
+      text-transform: uppercase
+      font: 700 14px $mf, $af
+      color: #fff
+      padding: 15px 58px
+      border: 1px solid #94979a
+      transition: $mt
+      &:hover
+        color: #282f35
+        background-color: #94979a
+
+
+// Contact
+
+#contact
+  padding-top: 108px
+  padding-bottom: 111px
+  img
+    margin-bottom: 25px
+  .col
+    padding: 0 5%
+  p
+    font: 400 24px/34px $mf, $af
+    font-style: italic
+    color: #848789
+    margin-bottom: 30px
+  form
+    width: 100%
+  input
+    float: left
+    height: 67px
+    box-sizing: border-box
+    border-radius: 0
+  input[type=text]
+    width: 75%
+    border: 1px solid #d3d7d9
+    padding: 0 27px
+    color: #848789
+    &:focus::-webkit-input-placeholder
+      text-indent: -150px
+    &:focus::-moz-placeholder
+      text-indent: -150px
+    &:focus::-ms-input-placeholder
+      text-indent: -150px
+
+  input[type=submit]
+    width: 23.3%
+    background-color: $mc
+    color: #fff
+    text-transform: uppercase
+    border: 0
+    font: 300 24px/24px $mf, $af
+
+
+// Footer
+
+footer
+  background-color: #f7f7f7
+  padding:
+    left: 10%
+    right: 10%
+    bottom: 100px
+    top: 95px
+  p
+    font: 700 16px $mf, $af
+    color: #848789
+    margin-bottom: 0
+  span
+    display: block
+    font: 400 14px $mf, $af
+    color: #848789
+    font-style: italic
+  #socials
+    text-align: center
+    margin: 10px 0
+    a
+      display: inline-block
+      margin: 0 5px
+      color: #fff
+      border-radius: 50%
+      font-size: 20px
+      line-height: 34px
+      height: 34px
+      width: 34px
+      box-sizing: border-box
+      &:nth-child(1)
+        background-color: #78cdf0
+      &:nth-child(2)
+        background-color: #537bbd
+      &:nth-child(3)
+        background-color: #eb5755
+  .crafted
+    text-align: right
+    margin: 18px 0
+    font-style: italic
+    a
+      font-size: 20px
+      margin-left: 5px
+      vertical-align: -1px
+      font-style: normal
+      color: $mc
+      transition: $mt + .1
+      &:hover
+        color: #eb5755
+
+
+// JS Classes

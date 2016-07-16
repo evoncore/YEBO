@@ -1,6 +1,25 @@
 
-var HelloWorld = React.createClass({
-  render: function() {
-    return <h1> Hello World! </h1>
-  }
+'use strict';
+
+// Home section
+
+var homeSection = (function() {
+
+    var main = $('#home');
+  //----------------------
+
+  return {
+    height: function() {
+      main.css({height: $('body').innerHeight()})
+    }
+  };
+
+}());
+
+
+
+homeSection.height();
+
+$(window).on('resize', function() {
+  homeSection.height();
 });
